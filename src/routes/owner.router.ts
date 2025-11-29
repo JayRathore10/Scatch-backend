@@ -1,6 +1,9 @@
 import { Router } from "express";
-import { test } from "../controllers/owner.controller";
+import { createOwner, test } from "../controllers/owner.controller";
 
 export const ownerRouter = Router();
 
-ownerRouter.get("/test" , test); 
+if(process.env.NODE_ENV === "development"){
+  ownerRouter.get("/test" , test); 
+  ownerRouter.post("/create" , createOwner);
+}

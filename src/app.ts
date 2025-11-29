@@ -3,6 +3,10 @@ import express from "express";
 import { userRouter } from "./routes/user.router";
 import { productRouter } from "./routes/product.router";
 import { ownerRouter } from "./routes/owner.router";
+import dotenv from "dotenv";
+
+// loads the environment variable 
+dotenv.config(); 
 
 export const app = express();
 

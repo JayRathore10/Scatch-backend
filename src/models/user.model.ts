@@ -1,7 +1,18 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
-  fullName : {
+interface IUser extends Document{
+  email : string, 
+  password : string , 
+  fullname : string , 
+  cart? : any[]  , 
+  orders?: any[] ,
+  isAdmin : boolean , 
+  contact : number , 
+  picture?: string 
+}
+
+const userSchema = new mongoose.Schema<IUser>({
+  fullname : {
     type : String , 
     minLength : 3  , 
     trim : true , 
